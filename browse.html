@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Browse — ComicVerse Hub</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+            <div class="brand">ComicVerse Hub</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse</a>
+                <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <h2>Browse All Comics</h2>
+                <div class="controls">
+                    <input id="search" class="search" placeholder="Search title, character, genre">
+                    <select id="publisher-filter" class="select">
+            <option value="">All Publishers</option>
+          </select>
+                    <select id="sort-by" class="select">
+            <option value="release-desc">Newest</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="title-asc">Title A → Z</option>
+          </select>
+                </div>
+            </div>
+            <div id="browse-grid" class="grid grid-cols-4" style="margin-top:16px"></div>
+        </section>
+    </main>
+
+    <footer class="container footer">
+        <div>© ComicVerse Hub 2025</div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            BrowseUI.init();
+            CartUI.renderCount();
+        });
+    </script>
+</body>
+
+</html>

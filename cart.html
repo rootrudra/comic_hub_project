@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cart — ComicVerse Hub</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+            <div class="brand">ComicVerse Hub</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="browse.html">Browse</a>
+                <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Your Cart</h2>
+            <div id="cart-items" style="margin-top:16px"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:18px">
+                <div class="small">All orders simulated. No payment integration.</div>
+                <div>
+                    <strong>Total: $<span id="cart-total">0.00</span></strong>
+                    <button class="btn" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container footer">
+        <div>© ComicVerse Hub 2025</div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            CartUI.init();
+        });
+    </script>
+</body>
+
+</html>
